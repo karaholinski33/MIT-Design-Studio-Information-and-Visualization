@@ -18,6 +18,12 @@ h2{
     stroke: #e8eced;
 }
 
+.title {
+  font: 300 78px Helvetica Neue;
+  fill: #666;
+  text-align: center;
+}
+
 
 .axis-x .tick line, .axis-x .tick path, .axis-y .tick path {
     stroke-width: 1px;

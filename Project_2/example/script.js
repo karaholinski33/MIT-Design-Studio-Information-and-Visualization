@@ -20,13 +20,13 @@ var plot2 = d3.select('#plot2') // if we select a html id #name, if we select a 
 
 // var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083'
 
-d3.json("../data/boston_weather.json",draw);
+d3.json("boston_weather.json",draw);
 
 function draw(error,data){
 
     //PLOT 1 - today's weather
     var todayWeather = data.hourly.data;
-
+    alert('hi')
     //today's temperature evolution
 
     // 1 UNDERSTAND THE DATA
