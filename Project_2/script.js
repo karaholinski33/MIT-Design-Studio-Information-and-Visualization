@@ -59,6 +59,11 @@ complete: function (data) {
             .attr("x", 110)
             .attr("y",80)
             .text(newTemp)
+        var Precip = plot1.append("text")
+            .attr("class", "text2")
+            .attr("x", 80)
+            .attr("y",485)
+            .text('Chance of Precipitation')
         var myIcon= data.responseJSON.currently.icon
         //myIcon = 'rain';
         if (myIcon === 'partly-cloudy-day'){
@@ -68,6 +73,16 @@ complete: function (data) {
             .attr('width', 200)
             .attr('height', 200)
             .attr("xlink:href", "cloud1.png");
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 115)
+            .attr("y",380)
+            .text("Bring Your:")
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 70)
+            .attr("y",410)
+            .text("Self- Good to Go!")
         }
         else if (myIcon === 'partly-cloudy-night'){
             plot1.append("svg:image")
@@ -76,6 +91,16 @@ complete: function (data) {
             .attr('width', 200)
             .attr('height', 200)
             .attr("xlink:href", "cloud1.png");
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 115)
+            .attr("y",380)
+            .text("Bring Your:")
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 70)
+            .attr("y",410)
+            .text("Self- Good to Go!")
         }
         else if (myIcon === 'cloudy'){
             plot1.append("svg:image")
@@ -84,6 +109,16 @@ complete: function (data) {
             .attr('width', 200)
             .attr('height', 200)
             .attr("xlink:href", "cloud1.png");
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 115)
+            .attr("y",380)
+            .text("Bring Your:")
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 70)
+            .attr("y",410)
+            .text("Self- Good to Go!")
         }
         else if (myIcon === 'partly-cloudy-day'){
             plot1.append("svg:image")
@@ -92,6 +127,16 @@ complete: function (data) {
             .attr('width', 200)
             .attr('height', 200)
             .attr("xlink:href", "cloud1.png");
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 115)
+            .attr("y",380)
+            .text("Bring Your:")
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 70)
+            .attr("y",410)
+            .text("Self- Good to Go!")
         }
          else if (myIcon === 'snow'){
             plot1.append("svg:image")
@@ -103,12 +148,12 @@ complete: function (data) {
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",620)
+            .attr("y",380)
             .text("Bring Your:")
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",650)
+            .attr("y",410)
             .text("Snow Boots")
         }  
          else if (myIcon === 'sleet'){
@@ -121,12 +166,12 @@ complete: function (data) {
              plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",620)
+            .attr("y",380)
             .text("Bring Your:")
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",650)
+            .attr("y",410)
             .text("Snow Boots")
         }  
          else if (myIcon === 'rain'){
@@ -139,17 +184,17 @@ complete: function (data) {
              plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",620)
+            .attr("y",360)
             .text("Bring Your:")
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",650)
+            .attr("y",390)
             .text("Rain Boots")
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",680)
+            .attr("y",420)
             .text("Umbrella")
         }
          else if (myIcon === 'clear-night'){
@@ -159,6 +204,16 @@ complete: function (data) {
             .attr('width', 200)
             .attr('height', 200)
             .attr("xlink:href", "clear_night.png");
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 115)
+            .attr("y",380)
+            .text("Bring Your:")
+            plot1.append("text")
+            .attr("class", "text1")
+            .attr("x", 70)
+            .attr("y",410)
+            .text("Self- Good to Go!")
         }
          else if (myIcon === 'clear-day'){
             plot1.append("svg:image")
@@ -170,17 +225,17 @@ complete: function (data) {
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",620)
+            .attr("y",370)
             .text("Bring Your:")
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",650)
+            .attr("y",400)
             .text("Sunglasses");
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",680)
+            .attr("y",430)
             .text("Sunscreen")
         }
          else if (myIcon === 'fog'){
@@ -193,12 +248,12 @@ complete: function (data) {
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",620)
+            .attr("y",380)
             .text("Bring Your:")
             plot1.append("text")
             .attr("class", "text1")
             .attr("x", 115)
-            .attr("y",650)
+            .attr("y",410)
             .text("Glasses")
              
         }
@@ -240,7 +295,7 @@ complete: function (data) {
 
     // 1.3 create scales to put the data in the dom element
         var scaleX1 = d3.scaleTime().domain(extentdata24h).range([0,width1-20]);
-        var scaleY1 = d3.scaleLinear().domain([0,1]).range([height1/2+180,height1/4+130]);
+        var scaleY1 = d3.scaleLinear().domain([0,1]).range([height1/2+350,height1/4+310]);
 
     // 1.4 create groups to put the content inside them
         plot1.append('g').attr('transform', 'translate(' + margin1.l + ',' + margin1.t + ')').attr('class', 'axis axis-y');

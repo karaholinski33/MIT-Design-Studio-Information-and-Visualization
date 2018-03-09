@@ -38,6 +38,14 @@ body {
   text-align: center;
 }
 
+.text2 {
+  display: block;
+  font: 300 20px Century Gothic;
+  fill: #0d0d0d;
+  margin-right: 50px;
+  text-align: center;
+}
+
 
 
 path { 
