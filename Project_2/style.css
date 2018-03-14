@@ -3,7 +3,6 @@ body {
     text-align: center;
 }
 
-
 #mobile1,#mobile2 {
     width: 414px;
     height: 736px;
@@ -16,34 +15,38 @@ body {
 
 .title {
   display: block;
-  font: 300 50px Helvetica Neue;
+  font: 300 50px Courier New;
   fill: #666;
-  margin-right: 50px;
+  margin-right: 20px;
   text-align: center;
+  color: white;
 }
 
 .title2 {
   display: block;
-  font: 300 80px Arial;
+  font: 300 40px Courier New;
   fill: #0d0d0d;
-  margin-right: 50px;
+  margin-right: 20px;
   text-align: center;
+  color: white;
 }
 
 .text1 {
   display: block;
-  font: 300 30px Century Gothic;
+  font: 300 20px Courier New;
   fill: #0d0d0d;
-  margin-right: 50px;
+  margin-right: 20px;
   text-align: center;
+  color: white;
 }
 
 .text2 {
   display: block;
-  font: 300 20px Century Gothic;
+  font: 300 12px Courier New;
   fill: #0d0d0d;
-  margin-right: 50px;
+  margin-right: 20px;
   text-align: center;
+  color: white;
 }
 
 
