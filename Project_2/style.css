@@ -1,5 +1,5 @@
 body {
-    padding: 50px;
+    padding: 0px;
     text-align: center;
 }
 
@@ -10,7 +10,7 @@ body {
     float: left;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom:40px;
+    margin-bottom:0px;
 }
 
 .title {
@@ -26,6 +26,15 @@ body {
   display: block;
   font: 300 40px Courier New;
   fill: #0d0d0d;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+}
+
+.title3 {
+  display: block;
+  font: 300 30px Courier New;
+  fill: #FFFFFF;
   margin-right: 20px;
   text-align: center;
   color: white;
@@ -49,6 +58,14 @@ body {
   color: white;
 }
 
+.text3 {
+  display: block;
+  font: 300 40px Courier New;
+  fill: #FFFFFF;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+}
 
 
 path { 

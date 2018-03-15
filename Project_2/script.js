@@ -15,8 +15,8 @@ var width2 = d3.select('#mobile2').node().clientWidth,
 
 var plot2 = d3.select('#plot2') // if we select a html id #name, if we select a class .name
     .append('svg')
-    .attr('width', width2)
-    .attr('height', height2)
+    .attr('width', width2+-15)
+    .attr('height', height2+43)
     .attr('fill','black');
 
 // var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083'
@@ -34,33 +34,12 @@ complete: function (data) {
       strTemp = RoundedTemp.toString();
       strDeg = "°F";
       newTemp = strTemp.concat(strDeg)
-      var color = plot2.append('rect')
-        .attr("width", "100%")
-        .attr("x",-55)
-        .attr("y",82)
-        .attr("height", "100%")
+                
+        var color = plot2.append('rect')
+        .attr("width", 393)
+        .attr("height", 706)
         .attr("fill", "black");
-      var title = plot2.append("text")
-        .attr("class", "title")
-        .attr("x", 140)
-        .attr("y",150)
-        .text(newTemp)
-      if (RoundedTemp > 32) {
-          plot2.append("svg:image")
-          .attr('x', 40)
-          .attr('y', 442)
-          .attr('width', 300)
-          .attr('height', 290)
-          .attr("xlink:href", "puddle.png");
-      }
-        else {
-          plot2.append("svg:image")
-          .attr('x', 40)
-          .attr('y', 442)
-          .attr('width', 300)
-          .attr('height', 290)
-          .attr("xlink:href", "newice.png")  
-        }
+        
         var title2 = plot1.append("text")
             .attr("class", "title2")
             .attr("x", 140)
@@ -300,6 +279,13 @@ complete: function (data) {
             return d.precipProbability
             console.log(d.precipProbability)
     });
+            // and the average?
+        var meanTodayTemp = d3.mean(data24h,function(d){
+            return d.temperature
+    });
+        var meanTodayHum = d3.mean(data24h,function(d){
+            return d.humidity
+    });
         var height_graph_start = height1*(2/3)
         var height_graph_end = height1-margin1.b
 
@@ -374,6 +360,124 @@ complete: function (data) {
         .attr("cx",function(d) { return scaleX1(new Date (d.time*1000)); })
         .attr("cy",function(d) { return scaleY1(d.precipProbability); })
         .attr("r",3);
+     
+        
+        
+        
+      //now for plot2  
+    var diffPrec = data.responseJSON.currently.precipProbability - meanTodayWeather;
+    console.log(data.responseJSON.currently.precipProbability)
+    RoundedPrec = data.responseJSON.currently.precipProbability.toFixed(2)
+    RoundedPrecDiff = diffPrec.toFixed(2)  
+    console.log(RoundedPrec)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "text3")
+        .attr("x", 50)
+        .attr("y",500)
+        .text(RoundedPrec)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "text3")
+        .attr("x", 250)
+        .attr("y",500)
+        .text(RoundedPrecDiff)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "title3")
+        .attr("x", 150)
+        .attr("y",500)
+        .text('PRC')
+    if (diffPrec > 0){
+        plot2.append("svg:image")
+            .attr('x', 200)
+            .attr('y', 470)
+            .attr('width', 50)
+            .attr('height', 50)
+            .attr("xlink:href", "green_arrow.png");
+    }
+    else {
+        plot2.append("svg:image")
+            .attr('x', 200)
+            .attr('y', 470)
+            .attr('width', 50)
+            .attr('height', 50)
+            .attr("xlink:href", "red_arrow.png");
+    }
+    var diffTemp = data.responseJSON.currently.temperature - meanTodayTemp;
+    RoundedTempDiff = diffTemp.toFixed(2)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "text3")
+        .attr("x", 50)
+        .attr("y",300)
+        .text(RoundedTemp)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "text3")
+        .attr("x", 250)
+        .attr("y",300)
+        .text(RoundedTempDiff)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "title3")
+        .attr("x", 150)
+        .attr("y",300)
+        .text('TMP')
+    if (diffTemp > 0){
+        plot2.append("svg:image")
+            .attr('x', 200)
+            .attr('y', 270)
+            .attr('width', 50)
+            .attr('height', 50)
+            .attr("xlink:href", "green_arrow.png");
+    }
+    else {
+        plot2.append("svg:image")
+            .attr('x', 200)
+            .attr('y', 270)
+            .attr('width', 50)
+            .attr('height', 50)
+            .attr("xlink:href", "red_arrow.png");
+    }
+        
+    var diffHum = data.responseJSON.currently.humidity - meanTodayHum;
+    RoundedHum = data.responseJSON.currently.humidity.toFixed(2)
+    RoundedHumDiff = diffHum.toFixed(2)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "text3")
+        .attr("x", 50)
+        .attr("y",100)
+        .text(RoundedHum)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "text3")
+        .attr("x", 250)
+        .attr("y",100)
+        .text(RoundedHumDiff)
+    plot2.append("text")
+     var title = plot2.append("text")
+        .attr("class", "title3")
+        .attr("x", 150)
+        .attr("y",100)
+        .text('HUM')
+    if (diffTemp > 0){
+        plot2.append("svg:image")
+            .attr('x', 200)
+            .attr('y', 70)
+            .attr('width', 50)
+            .attr('height', 50)
+            .attr("xlink:href", "green_arrow.png");
+    }
+    else {
+        plot2.append("svg:image")
+            .attr('x', 200)
+            .attr('y', 70)
+            .attr('width', 50)
+            .attr('height', 50)
+            .attr("xlink:href", "red_arrow.png");
+    }
     //
     // plotNumbers
     //     .selectAll(".weatherNumbers")
