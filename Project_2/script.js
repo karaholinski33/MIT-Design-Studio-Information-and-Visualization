@@ -15,8 +15,8 @@ var width2 = d3.select('#mobile2').node().clientWidth,
 
 var plot2 = d3.select('#plot2') // if we select a html id #name, if we select a class .name
     .append('svg')
-    .attr('width', width2+-15)
-    .attr('height', height2+43)
+    .attr('width', width2)
+    .attr('height', height2)
     .attr('fill','black');
 
 // var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083'
@@ -36,8 +36,8 @@ complete: function (data) {
       newTemp = strTemp.concat(strDeg)
                 
         var color = plot2.append('rect')
-        .attr("width", 393)
-        .attr("height", 706)
+        .attr("width", "100%")
+        .attr("height", "100%")
         .attr("fill", "black");
         
         var title2 = plot1.append("text")
