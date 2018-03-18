@@ -489,7 +489,6 @@ complete: function (data) {
     //     .attr("x",function(d) { return scaleX1(new Date (d.time*1000)); })
     //     .attr("y",function(d) { return scaleY1(d.temperature); });
 
-<<<<<<< HEAD
     //d3.select("#date").html(formatDate(extentdata24h[0]))
     } else {
       console.log("DATA FETCH FAILED");
@@ -499,8 +498,4 @@ complete: function (data) {
 
     
 
-=======
-function draw(error,data){
-    console.log(data);
-}
 
