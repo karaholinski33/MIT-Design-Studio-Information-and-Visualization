@@ -1,4 +1,3 @@
-
 //plot
 var margin2 = {t: 5, r: 25, b: 20, l: 25}; //this is an object
 var width2 = d3.select('#plot2').node().clientwidth - margin2.r - margin2.l,
